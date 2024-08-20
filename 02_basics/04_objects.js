@@ -36,7 +36,7 @@ const obj2 = {2: "c", 3: "d"}
 //const obj3 = Object.assign({}, obj1, obj2)
 
 const obj3 = {...obj1, ...obj2}
-console.log(obj3);
+// console.log(obj3);
 
 const users = [
     {
@@ -54,10 +54,40 @@ const users = [
 ]
 
 users[1].email
-console.log(instaUser);
-console.log(Object.keys(instaUser));
-console.log(Object.values(instaUser));
-console.log(Object.entries(instaUser));
+// console.log(instaUser);
+// console.log(Object.keys(instaUser));
+// console.log(Object.values(instaUser));
+// console.log(Object.entries(instaUser));
 
-console.log(instaUser.hasOwnProperty("isLoggedIn"));
-console.log(instaUser.hasOwnProperty("isLoggedOut"));
+// console.log(instaUser.hasOwnProperty("isLoggedIn"));
+// console.log(instaUser.hasOwnProperty("isLoggedOut"));
+
+
+//Object de-structuring
+const course = {
+    courseName: "Fun with Javascript",
+    courseInstructor: "Dilip",
+    coursePrice: "999"
+}
+
+//course.courseInstructor
+//const {courseInstructor} = course
+//console.log(courseInstructor);
+const {courseInstructor: instructor} = course
+console.log(instructor);
+
+//APIs
+// How data received from the backend is displayed. Earlier the data was received in XML Format. Now JSON format is used.
+
+//JSON format
+// {
+//     "name": "Shivang",
+//     "course": "Javascript",
+//     "price": "Free"
+// }
+// Sometimes data from API can be an array of multiple objects and arrays
+// [
+//     {},
+//     {},
+//     {}
+// ]
