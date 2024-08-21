@@ -40,7 +40,7 @@ const test = () => {
 //     return num1 + num2
 // }
 
-//implicit return
+//implicit return -> no need of return keyword
 // const addTwo = (num1, num2) =>  num1 + num2
 // const addTwo = (num1, num2) =>  (num1 + num2)
 
