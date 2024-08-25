@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #card{
+            width: 150px;
+            height: 150px;
+            display: flexbox;
+            justify-self: center;
+            justify-content: center;
+        }
+        #img{
+            align-self: center;
+            height: 50px;
+            width: 50px;
+        }
+    </style>
+</head>
+<body style="background-color: #212121;color: #fff; ">
+    <div>
+    <!-- <p>
+        The XMLHttpRequest.readyState property returns the state an XMLHttpRequest client is in. An XHR client exists in one of the following states:
+    </p><br>
+    <p>
+
+        Value	State	                         Description<br>
+        0	    UNSENT	            Client has been created. open() not called yet.<br>
+        1	    OPENED	            open() has been called.<br>
+        2	    HEADERS_RECEIVED	send() has been called, and headers and status are available.<br>
+        3	    LOADING	            Downloading; responseText holds partial data.<br>
+        4	    DONE	            The operation is complete.<br>
+    </p>
+    </div> -->
+</body>
+
+<script>
+   const xhr = new XMLHttpRequest();
+   const reqUrl = 'https://api.github.com/users/ShivangSingh2003'
+   xhr.open('GET', reqUrl)
+   xhr.send();
+
+   let followers
+   let avatar
+   xhr.onreadystatechange = function () {
+       console.log(xhr.readyState);
+       if(xhr.readyState === 4){
+           // const data = this.responseText; result is undefined because type of response from url not an object but string
+           // console.log(data.followers); 
+
+            const data = JSON.parse(this.responseText) //converts string type data to JSON format
+            followers = data.followers  
+            avatar = data.avatar_url
+
+         console.log(avatar);
+         const div = document.createElement('div')
+         div.id = 'card'
+         div.innerHTML = `<img src="${avatar}" alt"" id="img"/><br/><p>${followers}</p>`
+         document.body.appendChild(div)
+        
+        }
+    }
+
+
+       
+
+</script>
+</html>
